@@ -7,4 +7,4 @@ server.host: "0"
 server.shutdownTimeout: "5s"
 elasticsearch.hosts: [ "http://elasticsearch:9200" ]
 monitoring.ui.container.elasticsearch.enabled: true
-server.publicBaseUrl: https://mohsenkamini.ir:5601
+server.publicBaseUrl: https://elk.mohsenkamini.ir:5601
