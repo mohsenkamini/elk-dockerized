@@ -7,9 +7,9 @@ services:
     container_name: es01
     environment:
       - node.name=es01
-      - cluster.name=es-docker-cluster      
-      - discovery.seed_hosts=es02,es03
-      - cluster.initial_master_nodes=es01,es02,es03
+      - cluster.name=es-docker-cluster
+      - discovery.seed_hosts=es02
+      - cluster.initial_master_nodes=es01,es02
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"      
       - xpack.license.self_generated.type=trial # <1>
@@ -48,8 +48,8 @@ services:
     environment:
       - node.name=es02
       - cluster.name=es-docker-cluster
-      - discovery.seed_hosts=es01,es03
-      - cluster.initial_master_nodes=es01,es02,es03
+      - discovery.seed_hosts=es01
+      - cluster.initial_master_nodes=es01,es02
       - bootstrap.memory_lock=true
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - xpack.license.self_generated.type=trial
@@ -125,7 +125,27 @@ services:
       - certs:$CERTS_DIR
       - ./data/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
     networks:
-      - elastic    
+      - elastic
+  fb01:
+    image: elastic/filebeat:${VERSION}
+    restart: unless-stopped
+    container_name: fb01
+    depends_on:
+      es01:
+        condition: service_healthy
+    environment:
+      - setup.kibana.host=kib01:5601
+      - output.elasticsearch.hosts=["elasticsearch:9200"]
+      - strict.perms=false
+    volumes:
+      - ./data/filebeat/data01/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - elastic
+
+
+
 volumes:
   data01:
     driver: local

@@ -71,7 +71,7 @@ services:
       - elastic
 
 volumes:
-  data01:
+  ./data/elasticsearch/data01:
     driver: local
   data02:
     driver: local
