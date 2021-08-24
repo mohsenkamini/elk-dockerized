@@ -30,8 +30,8 @@ services:
     volumes: 
       - data01:/usr/share/elasticsearch/data
       - certs:$CERTS_DIR
-    ports:
-      - 9200:9200
+    expose:
+      - "9200"
     networks:
       - elastic
       
@@ -127,7 +127,9 @@ services:
     networks:
       - elastic
   fb01:
-    image: elastic/filebeat:${VERSION}
+    build:
+      context: ./filebeat-dockerfile
+    image: custom-filebeat:${VERSION}
     restart: unless-stopped
     container_name: fb01
     depends_on:
@@ -141,9 +143,10 @@ services:
       - ./data/filebeat/data01/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/log:/var/myhost.logs:ro
     networks:
       - elastic
-
+        #    command: /bin/bash -c "usermod -a -G adm filebeat"
 
 
 volumes:
