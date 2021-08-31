@@ -1,0 +1,19 @@
+version: '2.2'
+
+services:
+  ls01:
+    image: logstash:${VERSION}
+    restart: unless-stopped
+    container_name: ls01
+    environment:
+      MONITORING_ELASTICSEARCH_HOSTS: https://elk.mohsenkamini.ir:9200
+      HTTP_HOST: elk.mohsenkamini.ir
+    volumes:
+      - ./data/pipeline/:/usr/share/logstash/pipeline/
+    networks:
+      - elastic
+    expose:
+      - 5044
+networks:
+  elastic:
+    driver: bridge

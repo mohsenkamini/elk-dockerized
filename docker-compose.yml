@@ -1,7 +1,0 @@
-version: '2'
-
-services:
-        es-master:
-                build:
-                        context: ./docker-compose/filebeat-dockerfile
-                image: customimage

@@ -2,13 +2,34 @@ filebeat.config:
   modules:
     path: ${path.config}/modules.d/*.yml
     reload.enabled: false
+filebeat.modules:
+  - module: system
+    syslog:
+      enabled: true
+      var.paths: ["/var/myhost.logs/syslog*"]
+    auth:
+      enabled: true
+      var.paths: ["/var/myhost.logs/auth.log*"]
 
 filebeat.inputs:
-- type: log
-  paths:
-    - /var/myhost.logs/*
+  - type: docker
+    containers:
+      path: "/var/mydocker.logs1/"
+      ids:
+        - "*"
+      tags: ["docker"]
+    json.message_key: log
+
+
+setup.kibana.host: "https://elk.mohsenkamini.ir:443"
+setup.kibana.protocol: "https"
+setup.kibana.username: "kibana_system"
+setup.kibana.password: "AgqZkeeuAKneXclhZnsS"
+#setup.dashboards.directory: "/usr/share/filebeat/kibana/7/dashboard" 
+#setup.dashboards.file: "/usr/share/filebeat/dashboards.zip"
+#setup.dashboards.enabled: true
 
 output.elasticsearch:
-  hosts: https://elk.mohsenkamini.ir:9200 
+  hosts: https://elk.mohsenkamini.ir:9200
   username: elastic
   password: 4iziizpy8SD7TRnEdqCj

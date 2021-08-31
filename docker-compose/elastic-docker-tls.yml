@@ -136,14 +136,15 @@ services:
       es01:
         condition: service_healthy
     environment:
-      - setup.kibana.host=kib01:5601
-      - output.elasticsearch.hosts=["elasticsearch:9200"]
       - strict.perms=false
     volumes:
       - ./data/filebeat/data01/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro
       - /var/lib/docker/containers:/var/lib/docker/containers:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /var/log:/var/myhost.logs:ro
+      - filebeatdashboards:/usr/share/filebeat/kibana/7/dashboard/
+      - ./data/filebeat/data01/dashboards.zip:/usr/share/filebeat/dashboards.zip
+      - /var/lib/docker/containers:/var/mydocker.logs1:ro
     networks:
       - elastic
         #    command: /bin/bash -c "usermod -a -G adm filebeat"
@@ -157,6 +158,8 @@ volumes:
   data03:
     driver: local
   certs:
+    driver: local
+  filebeatdashboards:
     driver: local
 
 networks: 
