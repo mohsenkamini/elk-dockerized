@@ -1,4 +1,4 @@
-version: '2.2'
+version: '3.7'
 
 services:
   ls01:
@@ -9,12 +9,13 @@ services:
       LS_JAVA_OPTS: "-Xmx1g -Xms1g"
     volumes:
       - ./data/pipeline/:/usr/share/logstash/pipeline/
+      - ./data/config/logstash.yml:/usr/share/logstash/config/logstash.yml
     networks:
       - elastic
     expose:
       - 5044
     ports:
-      - "12201:12201"
+      - 12201:12201
 networks:
   elastic:
     driver: bridge
