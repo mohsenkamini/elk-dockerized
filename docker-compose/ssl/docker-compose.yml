@@ -14,8 +14,6 @@ services:
       - "80:80"
       - "443:443"
       - "9200:9200"
-      - "5044:5044"
-      - "9600:9600"
     networks:
       - elastic
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"

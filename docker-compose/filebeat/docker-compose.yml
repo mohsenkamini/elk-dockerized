@@ -1,0 +1,29 @@
+  fb01:
+    build:
+      context: ./filebeat-dockerfile
+    image: custom-filebeat:${VERSION}
+    restart: unless-stopped
+    container_name: fb01
+    depends_on:
+      es01:
+        condition: service_healthy
+    environment:
+      - strict.perms=false
+    volumes:
+      - ./data/filebeat/data01/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /var/log:/var/myhost.logs:ro
+      - filebeatdashboards:/usr/share/filebeat/kibana/7/dashboard/
+      - ./data/filebeat/data01/dashboards.zip:/usr/share/filebeat/dashboards.zip
+      - /var/lib/docker/containers:/var/mydocker.logs1:ro
+    networks:
+      - elastic
+        #    command: /bin/bash -c "usermod -a -G adm filebeat"
+volumes:
+  filebeatdashboards:
+    driver: local
+
+networks:
+  elastic:
+    driver: bridge

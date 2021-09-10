@@ -1,0 +1,27 @@
+version: '2.2'
+
+services:
+  ls01:
+    image: logstash:${VERSION}
+    restart: unless-stopped
+    container_name: ls01
+    volumes:
+      - type: bind
+        source: ./data/config/logstash.yml
+        target: /usr/share/logstash/config/logstash.yml
+        read_only: true
+      - type: bind
+        source: ./data/pipeline
+        target: /usr/share/logstash/pipeline
+        read_only: true
+    ports:
+      - "5044:5044"
+      - "5000:5000/tcp"
+      - "5000:5000/udp"
+      - "9600:9600"
+    environment:
+      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      - elastic
+    depends_on:
+      - es01

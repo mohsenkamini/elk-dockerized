@@ -29,7 +29,8 @@ setup.kibana.password: "AgqZkeeuAKneXclhZnsS"
 #setup.dashboards.file: "/usr/share/filebeat/dashboards.zip"
 #setup.dashboards.enabled: true
 
-output.elasticsearch:
-  hosts: https://elk.mohsenkamini.ir:9200
+output.logstash:
+  hosts: ls01:5044
   username: elastic
   password: 4iziizpy8SD7TRnEdqCj
+  ttl: 2m

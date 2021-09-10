@@ -6,14 +6,15 @@ services:
     restart: unless-stopped
     container_name: ls01
     environment:
-      MONITORING_ELASTICSEARCH_HOSTS: https://elk.mohsenkamini.ir:9200
-      HTTP_HOST: elk.mohsenkamini.ir
+      LS_JAVA_OPTS: "-Xmx1g -Xms1g"
     volumes:
       - ./data/pipeline/:/usr/share/logstash/pipeline/
     networks:
       - elastic
     expose:
       - 5044
+    ports:
+      - "12201:12201"
 networks:
   elastic:
     driver: bridge
