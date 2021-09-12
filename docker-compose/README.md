@@ -30,7 +30,7 @@
  
  ### توضیح دیزاین نود مرکزی ELK
  
- 
+ ![ELK base diagram](https://user-images.githubusercontent.com/77579794/133003680-f091cc3e-a195-4516-982a-313afe60e0eb.png)
  
  ---
  ##  راه اندازی `Agent` ها
