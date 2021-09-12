@@ -10,12 +10,18 @@ services:
     volumes:
       - ./data/pipeline/:/usr/share/logstash/pipeline/
       - ./data/config/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - /var/log:/var/log/myhost.logs:ro
     networks:
       - elastic
-    expose:
-      - 5044
+        #expose:
+        # - 5044
     ports:
-      - 12201:12201
+      - "9600:9600"
+      - "5400:5400"
+      - "5400:5400/udp"
+      - "12201:12201/udp"
+      - "12201:12201/tcp"
+      - "12202:12202"
 networks:
   elastic:
     driver: bridge
