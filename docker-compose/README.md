@@ -16,7 +16,7 @@
  1. [راه اندازی استک کلی و پایه `elastcisearch & Kibana`](#راه-اندازی-استک-کلی-و-پایه-elastcisearch--kibana)
  2.  [راه اندازی `Agent` ها ](#راه-اندازی-agent-ها)
  ---
- ## راه اندازی استک کلی و پایه elastcisearch & Kibana
+ ## راه اندازی استک کلی و پایه `elastcisearch & Kibana`
  
  هسته اصلی استک `elasticsearch` و `kibana` میباشند.
  
