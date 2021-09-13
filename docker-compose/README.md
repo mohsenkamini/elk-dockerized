@@ -30,6 +30,8 @@
  
  ### توضیح دیزاین نود مرکزی ELK
  
+ با استفاده از چارت زیر به آرکیتک نود مرکزی میپردازیم.
+ 
  ![ELK base diagram](https://user-images.githubusercontent.com/77579794/133003680-f091cc3e-a195-4516-982a-313afe60e0eb.png)
  
  ---
