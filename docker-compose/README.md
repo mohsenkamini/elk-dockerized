@@ -94,6 +94,14 @@
  cd elk-dockerized/docker-compose/reverse-proxy/
  sed -i 's/elk.test.ir/YOUR_DOMAIN/g' ./data/nginx/app.conf
  </pre>
+ 
+ اسکریپتی برای راه اندازی و انجام مراحل دریافت گواهی `SSL` تهیه شده که از آن کمک میگیریم. 
+ - نکته: پیشنهاد میشود قبل از اجرای این اسکریپت `docker login` کنید تا با ارور rate limit برخورد نکنید.
+  <pre dir="ltr">
+./init-letsencrypt.sh
+# put y to the first question.
+ </pre>
+ 
  ---
  ##  راه اندازی `Agent` ها
 </div>
