@@ -91,6 +91,7 @@
  دامنه خود را در کامند زیر جایگذاری و 
  اجرا کنید:
  <pre dir="ltr">
+ cd elk-dockerized/docker-compose/reverse-proxy/
  sed -i 's/elk.test.ir/YOUR_DOMAIN/g' ./data/nginx/app.conf
  </pre>
  ---
