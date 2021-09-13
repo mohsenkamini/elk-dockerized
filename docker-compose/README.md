@@ -104,7 +104,7 @@ docker-compose -f create-certs.yml run --rm create_certs
 docker-compose up -d
   </pre>
  
- در این مرحله kibana قادر به برقراری ارتباط به با الستیک نیست. شما باید یوزر و پسورد مربوط به کیبانا را تولید کنید.
+ در این مرحله kibana قادر به برقراری ارتباط با الستیک نیست. شما باید یوزر و پسورد مربوط به کیبانا را تولید کنید.
      <pre dir="ltr">
 docker exec es01 /bin/bash -c "bin/elasticsearch-setup-passwords \
 auto --batch --url https://es01:9200"
