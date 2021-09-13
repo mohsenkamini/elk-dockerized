@@ -100,7 +100,7 @@ sysctl -w vm.max_map_count=262144
  حال راه اندازی certificate داخلی و بالا آوردن نهایی کانتینر هارا شروع میکنیم.
     <pre dir="ltr">
 docker-compose -f create-certs.yml run --rm create_certs
-# This one could take a while ...
+#This one could take a while ...
 docker-compose up -d
   </pre>
  
