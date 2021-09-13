@@ -146,7 +146,7 @@ auto --batch --url https://es01:9200"
  </pre>
  سپس از
  اسکریپتی که برای راه اندازی و انجام مراحل دریافت گواهی `SSL` تهیه شده, کمک میگیریم. 
- 
+ و در نهایت کانتینر های مربوط به `reverse proxy` را آماده میکنیم.
   <pre dir="ltr">
 ./init-letsencrypt.sh
 # put y to the first question.
