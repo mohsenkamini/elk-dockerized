@@ -106,7 +106,7 @@ docker-compose up -d
  
  در این مرحله kibana قادر به برقراری ارتباط با الستیک نیست. شما باید یوزر و پسورد مربوط به کیبانا را تولید کنید.
      <pre dir="ltr">
-docker exec es01 /bin/bash -c "bin/elasticsearch-setup-passwords \
+docker exec es01 /bin/bash -c "bin/elasticsearch-setup-passwords \\
 auto --batch --url https://es01:9200"
   </pre>
  - نکته : حتما خروجی این دستور را ذخیره کنید و داشته باشید.
@@ -114,8 +114,6 @@ auto --batch --url https://es01:9200"
  حالا اطلاعات credential مربوط به یوزر `kibana_system` را داخل فایل `docker-compose.yml` و زیر سرویس `kib01` در دایرکتیو های مربوطه وارد کنید.
       <pre dir="ltr">
   kib01:
-    image: kibana:${VERSION}
-    restart: always
     .
     .
     .
@@ -140,14 +138,14 @@ auto --batch --url https://es01:9200"
  سپس فایل `.env` را باز کرده و مقادیر `domains` و `email` را با مقادیر مربوط به خود تغییر دهید.
  
  حال باید فایل کانفیگ nginx که در مسیر `elk-dockerized/docker-compose/reverse-proxy/data/nginx/app.conf` قرار دارد را با دامنه جدید آپدیت کنید.
- دامنه خود را در کامند زیر جایگذاری و 
+برای این کار دامنه خود را در کامند`sed` زیر جایگذاری و 
  اجرا کنید:
  <pre dir="ltr">
  cd elk-dockerized/docker-compose/reverse-proxy/
  sed -i 's/elk.test.ir/YOUR_DOMAIN/g' ./data/nginx/app.conf
  </pre>
- 
- اسکریپتی برای راه اندازی و انجام مراحل دریافت گواهی `SSL` تهیه شده که از آن کمک میگیریم. 
+ سپس از
+ اسکریپتی که برای راه اندازی و انجام مراحل دریافت گواهی `SSL` تهیه شده, کمک میگیریم. 
  
   <pre dir="ltr">
 ./init-letsencrypt.sh
