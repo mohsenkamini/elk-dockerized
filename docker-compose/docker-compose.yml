@@ -108,7 +108,6 @@ services:
     image: kibana:${VERSION}
     restart: unless-stopped
     container_name: kib01
-    depends_on: {"es01": {"condition": "service_healthy"}}
     expose:
       - "5601"    
     environment:
