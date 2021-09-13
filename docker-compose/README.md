@@ -150,6 +150,8 @@ auto --batch --url https://es01:9200"
   <pre dir="ltr">
 ./init-letsencrypt.sh
 # put y to the first question.
+# then compose up the containers to finalize the process
+docker-compose up -d
  </pre>
  
  ---
