@@ -132,8 +132,6 @@ volumes:
     driver: local
   data02:
     driver: local
-  data03:
-    driver: local
   certs:
     driver: local
 
