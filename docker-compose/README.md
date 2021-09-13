@@ -32,7 +32,7 @@
  
  با استفاده از چارت زیر به آرکیتک نود مرکزی میپردازیم.
  
- ![ELK base diagram](https://user-images.githubusercontent.com/77579794/133003680-f091cc3e-a195-4516-982a-313afe60e0eb.png)
+ ![ELK base diagram - numbered](https://user-images.githubusercontent.com/77579794/133118238-baf0f569-61bd-43a7-9e6d-3061d7e4037c.png)
  
  ---
  ##  راه اندازی `Agent` ها
