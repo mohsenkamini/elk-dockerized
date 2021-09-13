@@ -123,7 +123,7 @@ auto --batch --url https://es01:9200"
     .
     .
        ELASTICSEARCH_USERNAME: kibana_system
-       ELASTICSEARCH_PASSWORD: USoYAftH39I9ArPGQZ0C
+       ELASTICSEARCH_PASSWORD: CHANGEME
   </pre>
 
  
