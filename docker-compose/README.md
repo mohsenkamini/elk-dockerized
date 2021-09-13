@@ -154,6 +154,27 @@ auto --batch --url https://es01:9200"
 docker-compose up -d
  </pre>
  
+ 
+ ### تایید نهایی راه اندازی استک
+ 
+ برای اینکه از راه اندازی استک خود مطمئن شوید باید رکوئست های زیر را به دامنه تعیین شده ارسال کنید. میتوانید از مرورگر خود برای اینکار استفاده کنید.
+
+ - `https://YOUR-DOMAIN:9200`
+ 
+ از اطلاعات کاربر `elastic` که قبلا ذخیره کرده بودید استفاده کنید برای login کردن.
+ 
+ خروجی باید اطلاعات مربوط به `elasticsearch` شما را نشان دهد.
+  ![landing page 9200](https://user-images.githubusercontent.com/77579794/133146932-3accd565-6864-44b1-b3df-7163678bc09f.jpg)
+ 
+ - `https://YOUR-DOMAIN`
+ 
+  از اطلاعات کاربر `elastic` که قبلا ذخیره کرده بودید استفاده کنید برای login کردن.
+ 
+ خروجی باید اطلاعات مربوط به `elasticsearch` شما را نشان دهد.
+  ![landing page 443](https://user-images.githubusercontent.com/77579794/133146927-ed8a6218-9a24-4a6c-afa6-374d2a055291.jpg)
+ 
+ 
+ 
  ---
  ##  راه اندازی `Agent` ها
 </div>
