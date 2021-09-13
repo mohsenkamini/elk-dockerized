@@ -126,9 +126,9 @@ auto --batch --url https://es01:9200"
   </pre>
 و دوباره اجرا کنید
  
-       <pre dir="ltr">
-       docker-compose up -d
-         </pre>
+<pre dir="ltr">
+docker-compose up -d
+</pre>
  
  ### راه اندازی nginx به عنوان `reverse proxy`
  
