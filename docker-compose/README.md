@@ -93,11 +93,39 @@ sed -i 's/elk.test.ir/YOUR-DOMAIN/g' ./data/kibana/kibana.yml
  - مطمئن شوید هم برای هاست خود و هم برای داکر پراکسی تعریف کرده اید.
  
  سپس
- تنها کافیست کامند زیر را اجرا کنید.
+ مطمئن شوید که حداقل 4 گیگابایت رم به داکر اختصاص یافته است.
    <pre dir="ltr">
+sysctl -w vm.max_map_count=262144
+  </pre>
+ حال راه اندازی certificate داخلی و بالا آوردن نهایی کانتینر هارا شروع میکنیم.
+    <pre dir="ltr">
+docker-compose -f create-certs.yml run --rm create_certs
+# This one could take a while ...
 docker-compose up -d
   </pre>
  
+ در این مرحله kibana قادر به برقراری ارتباط به با الستیک نیست. شما باید یوزر و پسورد مربوط به کیبانا را تولید کنید.
+     <pre dir="ltr">
+docker exec es01 /bin/bash -c "bin/elasticsearch-setup-passwords \
+auto --batch --url https://es01:9200"
+  </pre>
+ - نکته : حتما خروجی این دستور را ذخیره کنید و داشته باشید.
+
+ حالا اطلاعات credential مربوط به یوزر `kibana_system` را داخل فایل `docker-compose.yml` و زیر سرویس `kib01` در دایرکتیو های مربوطه وارد کنید.
+      <pre dir="ltr">
+  kib01:
+    image: kibana:${VERSION}
+    restart: always
+    .
+    .
+    .
+    environment:
+    .
+    .
+       ELASTICSEARCH_USERNAME: kibana_system
+       ELASTICSEARCH_PASSWORD: USoYAftH39I9ArPGQZ0C
+  </pre>
+
  
  ### راه اندازی nginx به عنوان `reverse proxy`
  
