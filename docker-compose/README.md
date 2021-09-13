@@ -87,8 +87,11 @@
  
  سپس فایل `.env` را باز کرده و مقادیر `domains` و `email` را با مقادیر مربوط به خود تغییر دهید.
  
- 
- 
+ حال باید فایل کانفیگ nginx که در مسیر `elk-dockerized/docker-compose/reverse-proxy/data/nginx/app.conf` قرار دارد را با دامنه جدید آپدیت کنید.
+ اجرا کنید:
+ <pre dir="ltr">
+ sed -i 's/elk.test.ir/<YOUR_DOMAIN>/g' ./data/nginx/app.conf
+ </pre>
  ---
  ##  راه اندازی `Agent` ها
 </div>
