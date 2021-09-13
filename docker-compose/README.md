@@ -170,10 +170,16 @@ docker-compose up -d
  
   از اطلاعات کاربر `elastic` که قبلا ذخیره کرده بودید استفاده کنید برای login کردن.
  
- خروجی باید اطلاعات مربوط به `elasticsearch` شما را نشان دهد.
+پس از login وارد پنل کیبانا خواهید شد.
   ![landing page 443](https://user-images.githubusercontent.com/77579794/133146927-ed8a6218-9a24-4a6c-afa6-374d2a055291.jpg)
  
+ ### تغییر لایسنس از trial به basic
+ پس از ورود به پنل کیبانا از منوی سمت چپ به ترتیب زیر عمل کنید.
  
+  <pre dir="ltr">
+Stack Management > Stack > License Management > revert to basic
+ </pre>
+   ![license management](https://user-images.githubusercontent.com/77579794/133150316-fa8fa36a-f679-4b77-a066-0cc7371d1883.png)
  
  ---
  ##  راه اندازی `Agent` ها
