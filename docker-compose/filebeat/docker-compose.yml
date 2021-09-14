@@ -2,9 +2,7 @@ version: '2.2'
 
 services:
   fb01:
-    build:
-      context: ./filebeat-dockerfile
-    image: custom-filebeat:${VERSION}
+    image: registry.classeh.wikidemo.ir/elk/custom-filebeat:7.14.0
     restart: unless-stopped
     container_name: fb01
     environment:
