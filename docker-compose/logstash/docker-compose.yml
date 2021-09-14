@@ -10,7 +10,6 @@ services:
     volumes:
       - ./data/pipeline/:/usr/share/logstash/pipeline/
       - ./data/config/logstash.yml:/usr/share/logstash/config/logstash.yml
-      - /var/log:/var/log/myhost.logs:ro
     networks:
       - elastic
         #expose:
