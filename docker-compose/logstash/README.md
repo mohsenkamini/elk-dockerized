@@ -62,8 +62,8 @@ output {
   اطلاعات مربوط به لاگ استش را ببینید و راه اندازی خود را confirm کنید.
   
 
-        <pre dir="ltr">  
-  http://elk.test.ir:9600/
+<pre dir="ltr">  
+http://elk.test.ir:9600/
   	
 host:	"a6edf0b04dee"
 version:	"7.14.0"
@@ -80,8 +80,16 @@ batch_delay:	50
 build_date:	"2021-07-29T19:43:14Z"
 build_sha:	"29d52f1e490de0a97194846bbfc2aa00dce23b54"
 build_snapshot:	false
-     </pre>
+</pre>
   
+  همچنین در کانفیگ لاگ استش میتوانید ببینید:
+ <pre dir="ltr">  
+  [2021-09-14T20:17:24,900][INFO ][logstash.javapipeline    ][main] Starting pipeline {:pipeline_id=>"main", "pipeline.workers"=>8, "pipeline.batch.size"=>125, "pipeline.batch.delay"=>50, "pipeline.max_inflight"=>1000, "pipeline.sources"=>["/usr/share/logstash/pipeline/logstash.conf"], :thread=>"#<Thread:0xb130b87 run>"}
+[2021-09-14T20:17:27,048][INFO ][logstash.javapipeline    ][main] Pipeline Java execution initialization time {"seconds"=>2.14}
+[2021-09-14T20:17:27,145][INFO ][logstash.javapipeline    ][main] Pipeline started {"pipeline.id"=>"main"}
+[2021-09-14T20:17:27,184][INFO ][logstash.inputs.gelf     ][main][f07722edb04845f529cb09f5f2766cc4d65f7b5f8264c660a306d13dd613aeea] Starting gelf listener (udp) ... {:address=>"0.0.0.0:12201"}
+[2021-09-14T20:17:27,269][INFO ][logstash.agent           ] Pipelines running {:count=>1, :running_pipelines=>[:main], :non_running_pipelines=>[]}
+</pre>
   
   ## کانفیگ gelf برای ارسال لاگ ها به لاگ استش
   
