@@ -2,7 +2,7 @@ version: '2.2'
 
 services:
   es01:
-    image: elasticsearch:${VERSION}
+    image: registry.classeh.wikidemo.ir/elk/elasticsearch:7.14.0
     restart: unless-stopped
     container_name: es01
     environment:
@@ -42,7 +42,7 @@ services:
       retries: 5
 
   es02:
-    image: elasticsearch:${VERSION}
+    image: registry.classeh.wikidemo.ir/elk/elasticsearch:7.14.0
     restart: unless-stopped
     container_name: es02
     environment:
@@ -74,7 +74,7 @@ services:
       - elastic
       
 #  es03:
-#    image: elasticsearch:${VERSION}
+#    image: registry.classeh.wikidemo.ir/elk/elasticsearch:7.14.0
 #    restart: unless-stopped
 #    container_name: es03
 #    environment:
@@ -105,7 +105,7 @@ services:
 #    networks:
 #      - elastic
   kib01:
-    image: kibana:${VERSION}
+    image: registry.classeh.wikidemo.ir/elk/kibana:7.14.0
     restart: unless-stopped
     container_name: kib01
     expose:
