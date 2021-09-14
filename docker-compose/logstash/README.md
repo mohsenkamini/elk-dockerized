@@ -82,7 +82,7 @@ build_sha:	"29d52f1e490de0a97194846bbfc2aa00dce23b54"
 build_snapshot:	false
 </pre>
   
-  همچنین در کانفیگ لاگ استش میتوانید ببینید:
+  همچنین در لاگ های کانتینر لاگ استش میتوانید ببینید:
  <pre dir="ltr">  
   [2021-09-14T20:17:24,900][INFO ][logstash.javapipeline    ][main] Starting pipeline {:pipeline_id=>"main", "pipeline.workers"=>8, "pipeline.batch.size"=>125, "pipeline.batch.delay"=>50, "pipeline.max_inflight"=>1000, "pipeline.sources"=>["/usr/share/logstash/pipeline/logstash.conf"], :thread=>"#<Thread:0xb130b87 run>"}
 [2021-09-14T20:17:27,048][INFO ][logstash.javapipeline    ][main] Pipeline Java execution initialization time {"seconds"=>2.14}
@@ -97,18 +97,18 @@ build_snapshot:	false
   در مسیر `/etc/docker/daemon.json` قرار دهید و به جای `ip` تعریف شده 
   اطلاعات مربوط به هاست logstash خود را وارد کنید.
   
-        <pre dir="ltr">  
+<pre dir="ltr">  
 {
   "log-driver": "gelf",
   "log-opts": {
     "gelf-address": "udp://IP-OF-YOUR-LOGSTASH-HOST:12201"
   }
 }
-     </pre>
+</pre>
   و سپس
-          <pre dir="ltr">
+<pre dir="ltr">
   systemctl restart docker
-       </pre>
+</pre>
   از این پس هر کانتینر جدیدی که بسازید با این کانفیگ لاگ های خود را برای لاگ استش میفرستد.
   
  برای کانفیگ کانتینر هایی که در حال حاضر ساخته شدن میتواند به داکیومنت های داکر مراجعه کنید. `gelf log driver`
