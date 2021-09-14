@@ -52,7 +52,58 @@ output {
    </pre>
    در این قسمت همان طور که مشخص شده باید credentials مربوطه را برای یوزر elastic  وارد کنید و همچنین هاست مربوط به elasticsearch را تغییر دهید.
 
+  ## راه اندازی نهایی
+  فقط کافیه در مسیر گفته شده فایل کامپوز لاگ استش را اجزا کنید.
+      <pre dir="ltr">  
+  docker-compose up -d
+     </pre>
+  می توانید روی پورت 
+  `9600`
+  اطلاعات مربوط به لاگ استش را ببینید و راه اندازی خود را confirm کنید.
   
+
+        <pre dir="ltr">  
+  http://elk.test.ir:9600/
+  	
+host:	"a6edf0b04dee"
+version:	"7.14.0"
+http_address:	"0.0.0.0:9600"
+id:	"e5029ad8-53e4-4a24-88ed-802397180c09"
+name:	"a6edf0b04dee"
+ephemeral_id:	"59f04eda-2b0e-4c8c-b232-9508a87d2633"
+status:	"green"
+snapshot:	false
+pipeline:	
+workers:	8
+batch_size:	125
+batch_delay:	50
+build_date:	"2021-07-29T19:43:14Z"
+build_sha:	"29d52f1e490de0a97194846bbfc2aa00dce23b54"
+build_snapshot:	false
+     </pre>
+  
+  
+  ## کانفیگ gelf برای ارسال لاگ ها به لاگ استش
+  
+  برای تغییر log driver دیفالت در داکر میتواند کانفیگ زیر را 
+  در مسیر `/etc/docker/daemon.json` قرار دهید و به جای `ip` تعریف شده 
+  اطلاعات مربوط به هاست logstash خود را وارد کنید.
+  
+        <pre dir="ltr">  
+{
+  "log-driver": "gelf",
+  "log-opts": {
+    "gelf-address": "udp://IP-OF-YOUR-LOGSTASH-HOST:12201"
+  }
+}
+     </pre>
+  و سپس
+          <pre dir="ltr">
+  systemctl restart docker
+       </pre>
+  از این پس هر کانتینر جدیدی که بسازید با این کانفیگ لاگ های خود را برای لاگ استش میفرستد.
+  
+ برای کانفیگ کانتینر هایی که در حال حاضر ساخته شدن میتواند به داکیومنت های داکر مراجعه کنید. `gelf log driver`
   
   
   </div>
