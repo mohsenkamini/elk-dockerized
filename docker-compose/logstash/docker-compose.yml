@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   ls01:
-    image: logstash:${VERSION}
+    image: registry.classeh.wikidemo.ir/elk/logstash
     restart: unless-stopped
     container_name: ls01
     environment:
