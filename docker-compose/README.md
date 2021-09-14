@@ -205,7 +205,7 @@ Stack Management > Stack > License Management > revert to basic
  filebeat
  برای دریافت لاگ های هاست میزبان خود.
  در ادامه کار و کانفیگ ها دیاگرام توضیح خواهد داده شد.
-  ![filebeat diagram](https://user-images.githubusercontent.com/77579794/133247977-da537a90-d1cc-4586-83cf-ecf1cd0b4ad8.png)
+  ![filebeat diagram](https://user-images.githubusercontent.com/77579794/133249252-cce2e73b-a2b4-4533-96a8-9464f15504c4.png)
 
  
 مسیر فایل های کانفیگ و راه اندازی مربوطه به filebeat در مسیر `/elk-dockerized/docker-compose/filebeat`
