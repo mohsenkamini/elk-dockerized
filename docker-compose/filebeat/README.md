@@ -6,7 +6,7 @@
  filebeat
  برای دریافت لاگ های هاست میزبان خود.
  در ادامه کار و کانفیگ ها دیاگرام توضیح داده خواهد  شد.
-  ![filebeat diagram](https://user-images.githubusercontent.com/77579794/133249252-cce2e73b-a2b4-4533-96a8-9464f15504c4.png)
+  ![filebeat diagram](https://user-images.githubusercontent.com/77579794/133300407-05cf7486-d3af-42f9-bad6-2e0b6194fa25.png)
 مسیر فایل های کانفیگ و راه اندازی مربوطه به filebeat در مسیر `/elk-dockerized/docker-compose/filebeat`
  قرار دارد و هر مسیری در ادامه گفته میشود relative به این مسیر میباشد.
  
