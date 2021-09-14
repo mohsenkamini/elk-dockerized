@@ -39,11 +39,6 @@ filebeat.modules:
       enabled: true
       var.paths: ["/var/myhost.logs/auth.log*"]
 
-setup.kibana.host: "https://elk.test.ir:443"
-setup.kibana.protocol: "https"
-setup.kibana.username: "kibana_system"
-setup.kibana.password: "CHANGEME"
-
 output.elasticsearch:
   hosts: https://elk.test.ir:9200
   username: elastic
@@ -57,8 +52,7 @@ output.elasticsearch:
  2.  بخش `output.elasticsearch`
  
  در این بخش بعد از دریافت و عبور از module ها باید برای الستیک ارسال شوند که در این بخش کانفیگ و credentials مربوطه باید وارد شود.
- 
- همین طور دایرکتیو های مربوطه با اطلاعات مربوط به kibana باید با اطلاعات جدید استک شما تغییر کنند.
+
  
  
 
