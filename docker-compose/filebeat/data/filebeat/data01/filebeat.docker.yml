@@ -20,16 +20,7 @@ filebeat.inputs:
       tags: ["docker"]
     json.message_key: log
 
-
-setup.kibana.host: "https://elk.mohsenkamini.ir:443"
-setup.kibana.protocol: "https"
-setup.kibana.username: "kibana_system"
-setup.kibana.password: "AgqZkeeuAKneXclhZnsS"
-#setup.dashboards.directory: "/usr/share/filebeat/kibana/7/dashboard" 
-#setup.dashboards.file: "/usr/share/filebeat/dashboards.zip"
-#setup.dashboards.enabled: true
-
 output.elasticsearch:
-  hosts: https://elk.mohsenkamini.ir:9200 
+  hosts: https://elk.test.ir:9200 
   username: elastic
-  password: 4iziizpy8SD7TRnEdqCj
+  password: CHANGEME
