@@ -5,6 +5,6 @@
 # Default Kibana configuration for docker target
 server.host: "0"
 server.shutdownTimeout: "5s"
-elasticsearch.hosts: [ "http://elk.mohsenkamini.ir:9200" ]
+elasticsearch.hosts: [ "http://elk.test.ir:9200" ]
 monitoring.ui.container.elasticsearch.enabled: true
-server.publicBaseUrl: https://elk.mohsenkamini.ir:5601
+server.publicBaseUrl: https://elk.test.ir:5601
