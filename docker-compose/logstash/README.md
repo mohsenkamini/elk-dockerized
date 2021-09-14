@@ -23,6 +23,35 @@
   
   مسیر فایل های کانفیگ و راه اندازی مربوطه به logstash در مسیر /elk-dockerized/docker-compose/logstash قرار دارد و هر مسیری در ادامه گفته میشود relative به این مسیر میباشد.
   
+  دو فایل کانفیگ برای logstash در نظر گرفته شده است که به صورت bind-mount در اختیار کانتینر گذاشته خواهند شد.
+  
+  در مسیر `data/config/logstash.yml` کانفیگ پیکربندی logstash قرار دارد.
+  کافیست فقط دایرکتیو زیر را با ادرس مربوط به هاست `elasticsearch` خود و روی پورت مربوط به elasticsearch تغییر دهید.
+    <pre dir="ltr">
+  monitoring.elasticsearch.hosts: [ "https://elk.mohsenkamini.ir:9200" ]
+   </pre>
+  
+  فایل بعدی مربوط به کانفیگ `pipeline` لاگ استش میباشد که مواردی همچون:
+  
+  - `input` ها برای نحوه دریافت لاگ ها
+  
+  - `filter` ها برای پراسس کردن و عملیات روی لاگ ها
+  
+  - و `output` برای تعیین محل ارسال لاگ های دریافت و پراسس شده که ما از اوتپوت `elasticsearch` استفاده میکنیم.
+  
+  نگاهی بیاندازیم به کانفیگ های باید برای استک شما شخصی سازی شوند.
+      <pre dir="ltr">
+output {
+  elasticsearch {
+    hosts => ["https://elk.test.ir:9200"]
+    user => "elastic"
+    password => "CHANGEME"
+    index => "logstash-7.14.0"
+  }
+}
+   </pre>
+   در این قسمت همان طور که مشخص شده باید credentials مربوطه را برای یوزر elastic  وارد کنید و همچنین هاست مربوط به elasticsearch را تغییر دهید.
+
   
   
   
