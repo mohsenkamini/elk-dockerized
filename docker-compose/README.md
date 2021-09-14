@@ -201,6 +201,13 @@ Stack Management > Stack > License Management > revert to basic
  
  ### راه اندازی filebeat
  
+ دیزاین کانتینر
+ filebeat
+ برای دریافت لاگ های هاست میزبان خود.
+ در ادامه کار و کانفیگ ها دیاگرام توضیح خواهد داده شد.
+  ![filebeat diagram](https://user-images.githubusercontent.com/77579794/133247977-da537a90-d1cc-4586-83cf-ecf1cd0b4ad8.png)
+
+ 
 مسیر فایل های کانفیگ و راه اندازی مربوطه به filebeat در مسیر `/elk-dockerized/docker-compose/filebeat`
  قرار دارد و هر مسیری در ادامه گفته میشود relative به این مسیر میباشد.
  
