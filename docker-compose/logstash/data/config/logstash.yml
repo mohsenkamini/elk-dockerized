@@ -1,3 +1,3 @@
 http.host: "0.0.0.0"
-monitoring.elasticsearch.hosts: [ "https://elk.mohsenkamini.ir:9200" ]
+monitoring.elasticsearch.hosts: [ "https://elk.test.ir:9200" ]
 path.config: /usr/share/logstash/pipeline
