@@ -200,7 +200,7 @@ Stack Management > Stack > License Management > revert to basic
  
  حال به جزئیات کانفیگ و راه اندازی هر کدام از ایجنت ها به صورت جداگانه میپردازیم. برای خواندن داکیومنت هر کدام روی لینک مربوطه کلیک کنید:
  
- - ### [راه اندازی و کانفیگ filebeat ](https://github.com/mohsenkamini/elk-dockerized/tree/master/docker-compose/filebeat)
+ - ### [راه اندازی و کانفیگ filebeat ](https://github.com/mohsenkamini/elk-dockerized/tree/master/filebeat)
  
-  - ### [راه اندازی و کانفیگ logstash ](https://github.com/mohsenkamini/elk-dockerized/tree/master/docker-compose/logstash)
+  - ### [راه اندازی و کانفیگ logstash ](https://github.com/mohsenkamini/elk-dockerized/tree/master/logstash)
 </div>
